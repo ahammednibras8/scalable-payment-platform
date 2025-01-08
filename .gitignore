@@ -11,3 +11,8 @@ logs/
 
 # Docker
 *.docker
+
+node_modules
+npm-debug.log
+dist
+.env
