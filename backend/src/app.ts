@@ -3,6 +3,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import passport from "./passport";
 import authRoutes from "./authRoutes";
+import protectedRoutes from "./routes/protected";
+import { authenticate } from "./middleware/authenticate";
 
 const app: Application = express();
 
@@ -17,5 +19,9 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/auth", authRoutes);
+
+//Authenticate all protected routes
+app.use(authenticate);
+app.use("/api", protectedRoutes);
 
 export default app;
