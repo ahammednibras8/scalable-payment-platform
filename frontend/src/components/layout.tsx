@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      {children}
+      <main>{children}</main>
     </div>
   );
 };
