@@ -1,6 +1,8 @@
 import React from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../app/globals.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +16,13 @@ const geistMono = Geist_Mono({
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <main>{children}</main>
-    </div>
+    <>
+      <Navbar />
+      <div className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}>
+        <main>{children}</main>
+      </div>
+      <Footer />
+    </>
   );
 };
 
